@@ -27,6 +27,7 @@ $goods = mysqli_fetch_all($goods);
       <th>Описание</th>
       <th>Цена</th>
       <th>&#9998;</th>
+      <th>&#10006;</th>
     </tr>
     <?php
     foreach ($goods as $good) {
@@ -37,6 +38,7 @@ $goods = mysqli_fetch_all($goods);
         <td><?= $good[2] ?></td>
         <td><?= $good[3] ?></td>
         <td><a href="update.php?id=<?= $good[0] ?>">Обновить</a></td>
+        <td><a href="vendor/delete.php?id=<?= $good[0] ?>">Удалить</a></td>
       </tr>
     <?php
     }
