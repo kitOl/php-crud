@@ -6,10 +6,6 @@ $query = "SELECT * FROM `goods`";
 $goods = mysqli_query($connect, $query);
 $goods = mysqli_fetch_all($goods);
 
-// echo '<pre>';
-// print_r($goods);
-// echo '</pre>';
-
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +40,17 @@ $goods = mysqli_fetch_all($goods);
     }
     ?>
   </table>
+
+  <h2>Добавить новый товар</h2>
+  <form action="vendor/create.php" method="post">
+    <p>Название</p>
+    <input type="text" name="title" required>
+    <p>Описание</p>
+    <textarea name="description" required></textarea>
+    <p>Цена</p>
+    <input type="number" name="price" required>
+    <button type="submit">Добавить</button>
+  </form>
 
 </body>
 
